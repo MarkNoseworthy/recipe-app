@@ -18,6 +18,7 @@ const RecipePage = () => {
                     <p>{ingredients}</p>
                     <h3>Directions</h3>
                     <p>{directions}</p>
+                    <button type={"submit"}>Remove</button>
                 </div>
             ))}
         </>

@@ -3,23 +3,26 @@ import React, { useState } from 'react';
 const AddRecipePage = ({ recipes, setRecipes }) => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
+    const [ingredients, setIngredients] = useState('');
+    const [directions, setDirections] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Create a new recipe object
         const newRecipe = {
             id: recipes.length + 1,
             name,
-            description
+            description,
+            ingredients,
+            directions
         };
 
-        // Add the new recipe to the list of recipes in state
         setRecipes([...recipes, newRecipe]);
 
-        // Clear the form inputs
         setName('');
         setDescription('');
+        setIngredients('');
+        setDirections('');
     };
 
     return (
@@ -42,6 +45,24 @@ const AddRecipePage = ({ recipes, setRecipes }) => {
                     onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
             </div>
+            <div>
+                <label htmlFor="ingredients">Recipe Ingredients:</label>
+                <textarea
+                    id="ingredients"
+                    value={ingredients}
+                    onChange={(e) => setIngredients(e.target.value)}
+                ></textarea>
+            </div>
+            <div>
+                <label htmlFor="directions">Recipe Directions:</label>
+                <textarea
+                    id="directions"
+                    value={directions}
+                    onChange={(e) => setDirections(e.target.value)}
+                ></textarea>
+            </div>
+            <input type="file"  accept=".jpg, .png, .jpeg" />
+
             <button type="submit">Add Recipe</button>
         </form>
     );
