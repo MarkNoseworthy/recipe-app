@@ -1,11 +1,13 @@
 import './App.css';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import RecipePage from "./pages/RecipePage";
 import AddRecipePage from "./pages/AddRecipePage";
 
 function App() {
-  return (
+
+
+    return (
       <BrowserRouter>
           <div className="App">
               <NavBar />
